@@ -1,9 +1,14 @@
 import React from 'react';
-import { ReactDOM } from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import App from './App';
-import it from "react-timeago/lib/language-strings/it";
+import { BrowserRouter } from 'react-router';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.createRoot(<App />, div);
+  const root = ReactDOM.createRoot(div);
+  root.render(
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  );
 });
